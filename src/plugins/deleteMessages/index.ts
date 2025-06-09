@@ -150,7 +150,7 @@ const deleteCommand: Command = {
             const originalFetchedCount = messagesToDelete.length;
             // Filter out messages that are typically not user-deletable (e.g., system messages)
             // Standard user messages are type 0 (DEFAULT) and 19 (REPLY).
-            messagesToDelete = messagesToDelete.filter(message => message.type === 0 || message.type === 19);
+messagesToDelete = messagesToDelete.filter(message => message.type === MESSAGE_TYPE_DEFAULT || message.type === MESSAGE_TYPE_REPLY); // Assumes MESSAGE_TYPE_DEFAULT and MESSAGE_TYPE_REPLY are defined as 0 and 19 respectively
 
             const filteredCount = messagesToDelete.length;
 
